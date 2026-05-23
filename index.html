@@ -164,7 +164,7 @@
                     <div class="grid grid-cols-3 gap-2 bg-slate-950/90 border border-slate-800 p-2.5 rounded-xl relative shadow-inner" dir="ltr">
                         <div class="flex flex-col items-center">
                             <span id="t-pick-day" class="text-[10px] font-bold text-slate-500 uppercase mb-1">اليوم</span>
-                            <select id="scroll-day" onchange="updateDays(); triggerLiveAgeCalc();" class="w-full bg-slate-900 border border-slate-700/60 rounded-xl py-2 px-1 text-center font-bold text-sm text-slate-100 focus:outline-none focus:border-amber-500/80 cyber-font cursor-pointer shadow-md"></select>
+                            <select id="scroll-day" class="w-full bg-slate-900 border border-slate-700/60 rounded-xl py-2 px-1 text-center font-bold text-sm text-slate-100 focus:outline-none focus:border-amber-500/80 cyber-font cursor-pointer shadow-md"></select>
                         </div>
                         <div class="flex flex-col items-center">
                             <span id="t-pick-month" class="text-[10px] font-bold text-slate-500 uppercase mb-1">الشهر</span>
@@ -194,6 +194,18 @@
                     class="w-full py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 font-bold rounded-xl text-xs text-white shadow-[0_0_10px_rgba(6,182,212,0.2)] border border-cyan-400/20 tracking-wide transition-all transform active:scale-95">
                     📲 إضافة التطبيق للشاشة الرئيسية
                 </button>
+            </div>
+        </div>
+
+        <!-- ================= شاشة الانتظار والمزامنة الكونية الثالثة المضافة حديثاً ================= -->
+        <div id="view-loading" class="hidden text-center py-8 space-y-6 animate-pulse">
+            <div class="relative inline-flex items-center justify-center">
+                <div class="w-16 h-16 border-4 border-dashed border-amber-500 rounded-full animate-spin"></div>
+                <div class="absolute text-xl">⏳</div>
+            </div>
+            <div class="space-y-2">
+                <h3 id="t-load-title" class="cyber-font text-base font-black tracking-widest text-amber-400 uppercase">CONNECTING TO TIMESTREAM</h3>
+                <p id="t-load-desc" class="text-slate-400 text-xs max-w-xs mx-auto leading-relaxed">Reading deep space quantum ticks and alignment coordinates...</p>
             </div>
         </div>
 
@@ -309,6 +321,7 @@
                 months: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
                 ranks: { elder: "الملياردير الزمني العظيم 👑", mid: "المسافر المخضرم عبر العصور 🌀", young: "امبراطور الثواني السريعة ⚡", fresh: "المستكشف الزمني الناشئ 🚀" },
                 liveAgeLbl: "العمر الحالي: ", yLbl: "سنة", dLbl: "يوم", futureErr: "التاريخ في المستقبل!",
+                loadTitle: "جاري الاتصال بدورة الزمن الكونية", loadDesc: "جاري قراءة نبضات الفضاء وحساب إحداثيات المحاذاة الفلكية الحية...",
                 viralMsg: (name, days, rank, url) => `🚨 صدمة عمري! جربت هالموقع وطلع عشت أكثر من ${days} يوم وقلبي دق مليارات المرات.. وطلعت برحلة بالفضاء حول الشمس ملايين الكيلومترات وأنا جالس مكاني! 🤯🪐\n\nالموقع عطاني لقب: [ ${rank} ] 👑🔥\n\nاتحداكم تطلع أرقامكم وتنافسوني، كم ثانية عشتوا حتى الآن؟ ادخل اسمك وتاريخ ميلادك وشوف وعمرك يطير بالثواني! 👇🏃‍♂️\n${url}`
             },
             en: {
@@ -329,6 +342,7 @@
                 months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                 ranks: { elder: "The Ultimate Time Billionaire 👑", mid: "The Master Time-Traveler 🌀", young: "Emperor of Rapid Seconds ⚡", fresh: "The Rising Cosmic Nomad 🚀" },
                 liveAgeLbl: "Current Age: ", yLbl: "Years", dLbl: "Days", futureErr: "Date in the future!",
+                loadTitle: "CONNECTING TO TIMESTREAM", loadDesc: "Reading deep space quantum ticks and alignment coordinates...",
                 viralMsg: (name, days, rank, url) => `🚨 Mind Blown! I just checked my stats on this site and found out I've lived for over ${days} days, my heart beat billions of times, and I've traveled millions of kilometers through deep space while sitting on my couch! 🤯🪐\n\nIt gave me the Cosmic Title: [ ${rank} ] 👑🔥\n\nI dare you to calculate your stats and beat me! 👇🏃‍♂️\n\n${url}`
             },
             de: {
@@ -349,6 +363,7 @@
                 months: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
                 ranks: { elder: "Der ultimative Zeitmillionär 👑", mid: "Der Meister-Zeitreisende 🌀", young: "Kaiser der schnellen Sekunden ⚡", fresh: "Der aufstrebende kosmische Nomade 🚀" },
                 liveAgeLbl: "Aktuelles Alter: ", yLbl: "Jahre", dLbl: "Tage", futureErr: "Datum liegt in der Zukunft!",
+                loadTitle: "VERBINDUNG ZUM ZEITSTROM", loadDesc: "Quanten-Ticks im Weltraum und astronomische Koordinaten werden berechnet...",
                 viralMsg: (name, days, rank, url) => `🚨 Wahnsinn! Ich habe meine Statistiken überprüft: Ich habe über ${days} Tage gelebt. 🤯🪐\n\nMein kosmischer Titel: [ ${rank} ] 👑🔥\n\n${url}`
             },
             es: {
@@ -369,6 +384,7 @@
                 months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
                 ranks: { elder: "El Multimillonario del Tiempo Supremo 👑", mid: "El Maestro del Tiempo Viajero 🌀", young: "Emperador de los Segundos Rápidos ⚡", fresh: "El Nómada Cósmico Naciente 🚀" },
                 liveAgeLbl: "Edad Actual: ", yLbl: "Años", dLbl: "Días", futureErr: "¡Fecha en el futuro!",
+                loadTitle: "CONECTANDO CON EL FLUJO TEMPORAL", loadDesc: "Leyendo los pulsos cuánticos del espacio profundo y alineando coordenadas...",
                 viralMsg: (name, days, rank, url) => `🚨 ¡Impresionante! Revisé mis estadísticas y descubrí que he vivido más de ${days} días. 🤯🪐\n\nTítulo Cósmico: [ ${rank} ] 👑🔥\n\n${url}`
             },
             tr: {
@@ -388,7 +404,8 @@
                 pickDay: "Gün", pickMonth: "Ay", pickYear: "Yıl", titleRank: "Kozmik Unvan: ",
                 months: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
                 ranks: { elder: "En Büyük Zaman Milyarderi 👑", mid: "Usta Zaman Gezgini 🌀", young: "Hızlı Saniyelerin İmparatoru ⚡", fresh: "Yükselen Kozmik Göçebe 🚀" },
-                liveAgeLbl: "Mevcut Yaş: ", yLbl: "Yıl", dLbl: "Gün", futureErr: "Gelecek bir tarih giremezsiniz!",
+                liveAgeLbl: "Mevcut Yaş: ", yLbl: "Yaş", dLbl: "Gün", futureErr: "Gelecek bir tarih giremezsiniz!",
+                loadTitle: "ZAMAN AKIŞINA BAĞLANILIYOR", loadDesc: "Derin uzay kuantum tikleri ve astronomik hizalama koordinatları okunuyor...",
                 viralMsg: (name, days, rank, url) => `🚨 Aklım Başından Gitti! Bu sitede istatistiklerimi kontrol ettim und ${days} günden fazla yaşadığımı gördüm! Kozmik Unvanım: [ ${rank} ] 👑🔥\n\n${url}`
             },
             zh: {
@@ -409,6 +426,7 @@
                 months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
                 ranks: { elder: "终极时间亿万富翁 👑", mid: "时空旅行大师 🌀", young: "极速秒之皇帝 ⚡", fresh: "崛起的宇宙游牧者 🚀" },
                 liveAgeLbl: "当前年龄: ", yLbl: "岁", dLbl: "天", futureErr: "不能选择未来的日期！",
+                loadTitle: "正在连接时间流", loadDesc: "正在读取深空量子脉冲并计算天体对齐 koordinaten...",
                 viralMsg: (name, days, rank, url) => `🚨 惊呆了！我刚刚在这个网站上查了我的宇宙数据，发现自己已经活 over 了 ${days}天，心跳达数十亿次！称号：[ ${rank} ] 👑🔥\n\n${url}`
             }
         };
@@ -596,6 +614,10 @@
             safeSetText('t-card-legal', langData.cardLegal);
             safeSetText('t-btn-reset', langData.btnReset);
             safeSetText('t-btn-share', langData.btnShare);
+
+            // ترجمة شاشة الانتظار
+            safeSetText('t-load-title', langData.loadTitle);
+            safeSetText('t-load-desc', langData.loadDesc);
         }
 
         function switchLanguage(lang) {
@@ -651,10 +673,15 @@
             safeSetText('card-title-name', name);
 
             determineRankAndLabels();
-            switchView('view-results');
 
-            if (liveInterval) clearInterval(liveInterval);
-            liveInterval = setInterval(updateLiveCounters, 50);
+            // الانتقال إلى شاشة الانتظار أولاً لمدة 3.5 ثانية لمنح مظهر حسابي سينمائي
+            switchView('view-loading');
+
+            setTimeout(() => {
+                switchView('view-results');
+                if (liveInterval) clearInterval(liveInterval);
+                liveInterval = setInterval(updateLiveCounters, 50);
+            }, 3500); // 3500 ملي ثانية تعادل 3.5 ثوانٍ تماماً
         }
 
         function determineRankAndLabels() {
@@ -713,8 +740,11 @@
         function switchView(viewId) {
             const v1 = document.getElementById('view-input');
             const v2 = document.getElementById('view-results');
+            const v3 = document.getElementById('view-loading');
+            
             if(v1) v1.classList.add('hidden');
             if(v2) v2.classList.add('hidden');
+            if(v3) v3.classList.add('hidden');
             
             const target = document.getElementById(viewId);
             if(target) target.classList.remove('hidden');
