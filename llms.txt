@@ -1,0 +1,9 @@
+# Orbitage - Cosmic Time Explorer
+
+An interactive, futuristic web application that acts as a cosmic time capsule. It calculates real-time biological and astronomical counters measuring a user's life journey through the cosmos.
+
+## Core Features
+- Real-time running lifespan counters (seconds, heartbeats, space distance traveled around the sun, estimated dreams/sleep).
+- Manual age input support and dropdown date selectors.
+- Adaptive multilingual core (Arabic, English, German, Spanish, Turkish, Chinese) detecting browser language automatically.
+- Progressive Web App (PWA) fully optimized for home screen installation.
